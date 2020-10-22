@@ -1,0 +1,60 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\surya\Personal\project codes\8051 Development Board\MAX 485 Test\MAX485 test.uvproj
+Project File Date:  12/09/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling MAX485 test.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_INIT?MAX485_TEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_RX?MAX485_TEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_STRING?MAX485_TEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_ENTER?MAX485_TEST
+Program Size: data=12.0 xdata=0 code=174
+creating hex file from "MAX485 test"...
+"MAX485 test" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling MAX485 test.c...
+MAX485 TEST.C(4): error C141: syntax error near 'data', expected '<id>'
+MAX485 TEST.C(13): error C141: syntax error near '='
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling MAX485 test.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_RX?MAX485_TEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_ENTER?MAX485_TEST
+Program Size: data=12.0 xdata=0 code=197
+creating hex file from "MAX485 test"...
+"MAX485 test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_RX?MAX485_TEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_ENTER?MAX485_TEST
+Program Size: data=12.0 xdata=0 code=197
+creating hex file from "MAX485 test"...
+"MAX485 test" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling MAX485 test.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_RX?MAX485_TEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_ENTER?MAX485_TEST
+Program Size: data=12.0 xdata=0 code=197
+creating hex file from "MAX485 test"...
+"MAX485 test" - 0 Error(s), 2 Warning(s).

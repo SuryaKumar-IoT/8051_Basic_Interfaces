@@ -1,0 +1,58 @@
+C51 COMPILER V8.15   SWITCH                                                                10/01/2014 12:09:17 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE SWITCH
+OBJECT MODULE PLACED IN switch.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE switch.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          
+   3          #include "ORL/delay.h"
+   4          
+   5          sbit sw1=P2^0;
+   6          sbit sw2=P2^1;
+   7          sbit sw3=P2^2;
+   8          sbit sw4=P2^3;
+   9          sbit sw5=P2^4;
+  10          
+  11          sbit led1=P1^0;
+  12          sbit led2=P1^1;
+  13          sbit led3=P1^2;
+  14          sbit led4=P1^3;
+  15          sbit led5=P1^4;
+  16          
+  17          void main()
+  18          {
+  19   1        while(1)
+  20   1        {  
+  21   2           if(sw1==0)
+  22   2                 led1=0;
+  23   2               else if(sw2==0)
+  24   2                 led2=0;
+  25   2               else if(sw3==0)
+  26   2                 led3=0;
+  27   2               else if(sw4==0)
+  28   2                 led4=0;
+  29   2               else if(sw5==0)
+  30   2                 led5=0;
+  31   2               else
+  32   2                 led1=led2=led3=led4=led5=1;
+  33   2         }
+  34   1      }
+  35          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     79    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

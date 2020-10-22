@@ -1,0 +1,91 @@
+C51 COMPILER V8.15   UART                                                                  10/01/2014 17:28:28 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE UART
+OBJECT MODULE PLACED IN uart.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE uart.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          
+   3          #include "ORL/delay.h"
+   4          #include "ORL/lcd.h"
+   5          #include "ORL/uart.h"
+   6          
+   7          void main()
+   8          {
+   9   1        unsigned char ch;
+  10   1        lcd_init();
+  11   1        lcd_cmd(0x85);
+  12   1        lcd_string("UART TEST");
+  13   1        delay(100);
+  14   1        uart_init();
+  15   1      
+  16   1        while(1)
+  17   1        {
+  18   2          ch=uart_rx();
+  19   2      
+  20   2              if(ch=='a')
+  21   2              {                                                                 
+  22   3                lcd_cmd(1);
+  23   3                lcd_string("FORWARD");
+  24   3                delay(200);
+  25   3                uart_string("FORWARD");
+  26   3                uart_enter();
+  27   3                delay(200);
+  28   3              }
+  29   2              else if(ch=='b')
+  30   2              {                                                                 
+  31   3                lcd_cmd(1);
+  32   3                lcd_string("BACKWARD");
+  33   3                delay(200);
+  34   3                uart_string("BACKWARD");
+  35   3                delay(200);
+  36   3                uart_enter();
+  37   3              }
+  38   2              else if(ch=='c')
+  39   2              {                                                                 
+  40   3                lcd_cmd(1);
+  41   3                lcd_string("LEFT");
+  42   3                delay(200);
+  43   3                uart_string("LEFT");
+  44   3                delay(200);
+  45   3                uart_enter();
+  46   3              }
+  47   2              else if(ch=='d')
+  48   2              {                                                                 
+  49   3                lcd_cmd(1);
+  50   3                lcd_string("RIGHT");
+  51   3                delay(200);
+  52   3                uart_string("RIGHT");
+  53   3                delay(200);
+  54   3                uart_enter();
+  55   3              }
+C51 COMPILER V8.15   UART                                                                  10/01/2014 17:28:28 PAGE 2   
+
+  56   2              else
+  57   2              {
+  58   3                lcd_cmd(1);
+  59   3                lcd_string("STOP");
+  60   3                delay(200);
+  61   3                uart_string("STOP");
+  62   3                delay(200);
+  63   3                uart_enter();
+  64   3              }
+  65   2        }
+  66   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    609    ----
+   CONSTANT SIZE    =     43    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      11
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

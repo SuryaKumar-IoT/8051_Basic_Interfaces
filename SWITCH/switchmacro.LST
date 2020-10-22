@@ -1,0 +1,47 @@
+C51 COMPILER V8.15   SWITCHMACRO                                                           10/01/2014 12:45:03 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE SWITCHMACRO
+OBJECT MODULE PLACED IN switchmacro.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE switchmacro.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          
+   3          #define sw P2
+   4          #define led P1
+   5          
+   6          void main()
+   7          {
+   8   1        while(1)
+   9   1        {
+  10   2           if(sw==0xFE)
+  11   2                 led=0xFE;
+  12   2               else if(sw==0xFD)
+  13   2                 led=0xFD;
+  14   2               else if(sw==0xFB)
+  15   2                 led=0xFB;
+  16   2               else if(sw==0xF7)
+  17   2                 led=0xF7;
+  18   2               else if(sw==0xEF)
+  19   2                 led=0xEF;
+  20   2               else
+  21   2                 led=0xFF;
+  22   2         }
+  23   1      }
+  24          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     55    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

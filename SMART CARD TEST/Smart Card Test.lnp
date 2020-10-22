@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"Smart Card Test.obj" 
+TO "Smart Card Test" 
+RAMSIZE(256) 

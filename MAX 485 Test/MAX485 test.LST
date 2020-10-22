@@ -1,0 +1,40 @@
+C51 COMPILER V8.15   MAX485_TEST                                                           12/09/2014 16:46:29 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE MAX485_TEST
+OBJECT MODULE PLACED IN MAX485 test.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE MAX485 test.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "ORL/ORL.h"
+   2          #include "ORL/UART.h"
+   3          
+   4          sbit dat=P2^0;
+   5          sbit sw=P2^7;
+   6          
+   7          void main()
+   8          {
+   9   1              uart_init();
+  10   1      
+  11   1              if(sw==0)
+  12   1              {
+  13   2                 dat=0;
+  14   2                 uart_string("LS");
+  15   2                 while(sw==0);
+  16   2              }
+  17   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    134    ----
+   CONSTANT SIZE    =      3    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,33 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+D:\CODES\8051 Development Board\LED SWITCH L293D LCD\ledswitchl293dlcd.uv2
+Project File Date:  10/01/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling ledswitchl293dlcd.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_NUM?LEDSWITCHL293DLCD
+Program Size: data=16.0 xdata=0 code=634
+creating hex file from "ledswitchl293dlcd"...
+"ledswitchl293dlcd" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling ledswitchl293dlcd.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_NUM?LEDSWITCHL293DLCD
+Program Size: data=16.0 xdata=0 code=634
+creating hex file from "ledswitchl293dlcd"...
+"ledswitchl293dlcd" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling ledswitchl293dlcd.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_NUM?LEDSWITCHL293DLCD
+Program Size: data=16.0 xdata=0 code=634
+creating hex file from "ledswitchl293dlcd"...
+"ledswitchl293dlcd" - 0 Error(s), 1 Warning(s).

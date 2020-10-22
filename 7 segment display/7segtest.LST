@@ -1,0 +1,56 @@
+C51 COMPILER V8.15   7SEGTEST                                                              10/02/2014 16:05:25 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE 7SEGTEST
+OBJECT MODULE PLACED IN 7segtest.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE 7segtest.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #define seg P2
+   3          
+   4          sbit en1 = P3^0;
+   5          sbit en2 = P3^1;
+   6          sbit en3 = P3^2;
+   7          sbit en4 = P3^3;
+   8          
+   9          sbit sw1  = P1^0;
+  10          sbit sw2  = P1^1;
+  11          sbit sw3  = P1^2;
+  12          sbit sw4  = P1^3;
+  13          sbit sw5  = P1^4;
+  14          
+  15          void main()
+  16           {
+  17   1        en1 = en2 = en3 = en4 = 1;
+  18   1        while(1)
+  19   1         {
+  20   2                if(sw1 == 0)                           // for sw1 segment display     0
+  21   2                  P2 = 0x82;  
+  22   2                if(sw2 == 0)                           // for sw2 segment display     1
+  23   2                      P2 = 0xA4;      
+  24   2                if(sw3 == 0)                           // for sw3 segment display     2
+  25   2                      P2 = 0xF8;      
+  26   2                if(sw4 == 0)                           // for sw4 segment display     3
+  27   2                      P2 = 0x80;
+  28   2                if(sw5 == 0)                           // for sw5 segment display     4
+  29   2                      P2 = 0x98;
+  30   2                                                        
+  31   2         }
+  32   1       
+  33   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     40    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

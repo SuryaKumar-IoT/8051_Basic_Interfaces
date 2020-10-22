@@ -1,0 +1,69 @@
+C51 COMPILER V8.15   EEPROMTEXT                                                            10/10/2014 18:20:13 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE EEPROMTEXT
+OBJECT MODULE PLACED IN eepromtext.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE eepromtext.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          
+   3          #include "ORL/delay.h"
+   4          #include "ORL/lcd.h"
+   5          #include "ORL/uart.h"
+   6          #include "ORL/eeprom.h"
+   7          
+   8          unsigned int i,j;
+   9          unsigned char ch1;
+  10          unsigned char ch[20];
+  11          
+  12          void main()
+  13          {
+  14   1         
+  15   1         lcd_init();
+  16   1         lcd_cmd(0x83);
+  17   1         lcd_string("EEPROM TEST");
+  18   1      
+  19   1         uart_init();
+  20   1         uart_string("WELCOME");
+  21   1      
+  22   1         while(1)
+  23   1         {
+  24   2      
+  25   2            ch1=uart_rx();
+  26   2      
+  27   2                if(ch1==13)
+  28   2                {
+  29   3                   lcd_cmd(1);
+  30   3                       lcd_string(ch);
+  31   3                       delay(1000);
+  32   3                       uart_string(ch);
+  33   3                       delay(500);
+  34   3                       i=0;
+  35   3                }
+  36   2                else
+  37   2                {
+  38   3                   ch[i]=ch1;
+  39   3                       i++;
+  40   3                }
+  41   2                ch[i]='\0';
+  42   2      
+  43   2         }
+  44   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    683    ----
+   CONSTANT SIZE    =     20    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     25      14
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+C51 COMPILER V8.15   EEPROMTEXT                                                            10/10/2014 18:20:13 PAGE 2   
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

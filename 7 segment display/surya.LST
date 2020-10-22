@@ -1,0 +1,108 @@
+C51 COMPILER V8.15   SURYA                                                                 10/03/2014 16:27:29 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE SURYA
+OBJECT MODULE PLACED IN surya.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE surya.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include"REGx52.h"
+   2          #define seg_data P2
+   3          
+   4          sbit seg1=P3^1;
+   5          sbit seg2=P3^2;
+   6          sbit seg3=P3^3;
+   7          
+   8          int ones=0,tens=0,hundreds=0,l;
+   9          
+  10          void display_digit(int );
+  11          
+  12          void delay();
+  13          
+  14          void main()
+  15          {
+  16   1              seg1=seg2=seg3=1;
+  17   1              while(l<=999)
+  18   1              {
+  19   2                      ones=l%10;
+  20   2                      tens=(l/10)%10;
+  21   2                      hundreds=(l/100);
+  22   2                      display_digit(ones);
+  23   2                      seg1=0;
+  24   2                      delay();
+  25   2                      seg1=1;
+  26   2      
+  27   2                      display_digit(tens);
+  28   2                      seg2=0;
+  29   2                      delay();
+  30   2                      seg2=1;
+  31   2      
+  32   2                      display_digit(hundreds);
+  33   2                      seg3=0;
+  34   2                      delay();
+  35   2                      seg3=1;
+  36   2                      l++;
+  37   2              }
+  38   1      }
+  39          
+  40          void delay()
+  41          {
+  42   1              long int k;
+  43   1              for(k=0;k<1000;k++);
+  44   1      }
+  45          void display_digit(int c)
+  46          {
+  47   1              switch(c)
+  48   1              {
+  49   2              case 0:
+  50   2                      seg_data=0xbf;
+  51   2                      break;
+  52   2              case 1:
+  53   2                      seg_data=0x06;
+  54   2                      break;
+  55   2              case 2: 
+C51 COMPILER V8.15   SURYA                                                                 10/03/2014 16:27:29 PAGE 2   
+
+  56   2                      seg_data=0x5b;
+  57   2                      break;
+  58   2              case 3:
+  59   2                      seg_data=0x4f;
+  60   2                      break;
+  61   2                      case 4:
+  62   2                      seg_data=0x66;
+  63   2                      break;
+  64   2              case 5:
+  65   2                      seg_data=0x6d;
+  66   2                      break;
+  67   2              case 6:
+  68   2                      seg_data=0x7d;
+  69   2                      break;
+  70   2              case 7:
+  71   2                      seg_data=0x07;
+  72   2                      break;
+  73   2              case 8:
+  74   2                      seg_data=0x7f;
+  75   2                      break;  
+  76   2              case 9:
+  77   2                      seg_data=0x6f;
+  78   2                      break;
+  79   2              }
+  80   1      }
+  81          
+  82          
+  83           
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    268    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      8       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

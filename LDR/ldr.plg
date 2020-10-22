@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+E:\surya\Personal\project codes\8051 Development Board\LDR\ldr.uv2
+Project File Date:  10/03/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling ldr.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_NUM?LDR
+Program Size: data=16.0 xdata=0 code=496
+creating hex file from "ldr"...
+"ldr" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_NUM?LDR
+Program Size: data=16.0 xdata=0 code=496
+creating hex file from "ldr"...
+"ldr" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_NUM?LDR
+Program Size: data=16.0 xdata=0 code=496
+creating hex file from "ldr"...
+"ldr" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling ldr.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_NUM?LDR
+Program Size: data=16.0 xdata=0 code=501
+creating hex file from "ldr"...
+"ldr" - 0 Error(s), 1 Warning(s).
+</pre>
+</body>
+</html>

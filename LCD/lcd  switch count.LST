@@ -1,0 +1,50 @@
+C51 COMPILER V8.15   LCD__SWITCH_COUNT                                                     10/01/2014 16:35:08 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE LCD__SWITCH_COUNT
+OBJECT MODULE PLACED IN lcd  switch count.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lcd  switch count.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          
+   3          #include "ORL/delay.h"
+   4          #include "ORL/lcd.h"
+   5          
+   6          sbit sw=P2^0;
+   7          
+   8          void main()
+   9          {
+  10   1        unsigned  int count=0; 
+  11   1        lcd_init();
+  12   1        lcd_cmd(0x80);
+  13   1        lcd_string("Count: ");
+  14   1        lcd_cmd(0x89);
+  15   1        lcd_num(count);
+  16   1        while(1)
+  17   1        {  
+  18   2            if(sw==0)
+  19   2                {
+  20   3                  
+  21   3                      while(sw==0);
+  22   3                      count++;
+  23   3                      lcd_cmd(0x89);
+  24   3                      lcd_num(count);
+  25   3                }
+  26   2        }
+  27   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    325    ----
+   CONSTANT SIZE    =      8    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       9
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

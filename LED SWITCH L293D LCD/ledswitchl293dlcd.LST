@@ -1,0 +1,80 @@
+C51 COMPILER V8.15   LEDSWITCHL293DLCD                                                     11/08/2017 13:42:33 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE LEDSWITCHL293DLCD
+OBJECT MODULE PLACED IN ledswitchl293dlcd.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ledswitchl293dlcd.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          
+   3          #include "ORL/delay.h"
+   4          #include "ORL/lcd.h"
+   5          
+   6          #define sw P3
+   7          #define l293d P2
+   8          
+   9          
+  10          void main()
+  11          {
+  12   1        lcd_init();
+  13   1        lcd_cmd(0x85);
+  14   1        lcd_string("WELCOME");
+  15   1      
+  16   1        while(1)
+  17   1        { 
+  18   2          if(sw==0xFE)
+  19   2              {
+  20   3                lcd_cmd(1);
+  21   3                lcd_string("ROBO FRWD");
+  22   3                delay(200);
+  23   3                l293d=0xD7;
+  24   3              }
+  25   2              else if(sw==0xFD)
+  26   2              { 
+  27   3                lcd_cmd(1);
+  28   3                lcd_string("ROBO BACK");
+  29   3                delay(200);
+  30   3                l293d=0xEB;
+  31   3              }
+  32   2              else if(sw==0xFB)
+  33   2              {
+  34   3                lcd_cmd(1);
+  35   3                lcd_string("ROBO LEFT");
+  36   3                delay(200);
+  37   3                l293d=0xF5;
+  38   3      
+  39   3              }
+  40   2              else if(sw==0xF7)
+  41   2              {
+  42   3                lcd_cmd(1);
+  43   3                lcd_string("ROBO RIGHT");
+  44   3                delay(200);
+  45   3                l293d=0xD2;
+  46   3              }
+  47   2              else
+  48   2              {
+  49   3                lcd_cmd(1);
+  50   3                lcd_string("ROBO STOP");
+  51   3                delay(200);
+  52   3                l293d=0xFF;
+  53   3              }
+  54   2        }
+  55   1      }
+C51 COMPILER V8.15   LEDSWITCHL293DLCD                                                     11/08/2017 13:42:33 PAGE 2   
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    430    ----
+   CONSTANT SIZE    =     59    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       7
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

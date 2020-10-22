@@ -1,0 +1,135 @@
+C51 COMPILER V8.15   SMART_CARD                                                            11/19/2014 19:57:52 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE SMART_CARD
+OBJECT MODULE PLACED IN Smart Card.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Smart Card.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "ORL/ORL.h"
+   2          #include "ORL/DELAY.h"
+   3          #include "ORL/LCD.h"
+   4          #include "ORL/UART.h"
+   5          
+   6          unsigned char i,j=0;
+   7          unsigned char buf[50],ch,tempdata[10];
+   8          
+   9          void serial(void) interrupt 4
+  10          {
+  11   1         
+  12   1       if(RI)
+  13   1        {
+  14   2              buf[j] = SBUF;
+  15   2              ch=buf[j];
+  16   2              j++;
+  17   2        }
+  18   1        RI = 0;
+  19   1      }
+  20          
+  21          void main()
+  22          {
+  23   1              lcd_init();
+  24   1              delay(50);
+  25   1              uart_init(); 
+  26   1              delay(50);
+  27   1       
+  28   1              lcd_cmd(0x85);
+  29   1              lcd_string("WELCOME");
+  30   1              delay(500);
+  31   1       
+  32   1        start:
+  33   1       
+  34   1              lcd_cmd(0x01);
+  35   1              lcd_string("INSERT CARD");
+  36   1         
+  37   1              EA=1;
+  38   1              ES=1;
+  39   1         
+  40   1              j=0;
+  41   1              while(j==0);
+  42   1              delay(1000);
+  43   1              j=j-2;
+  44   1              buf[j]='\0';
+  45   1              j=0;
+  46   1      
+  47   1          lcd_cmd(0x01);
+  48   1              lcd_string("Card Testing..");
+  49   1        
+  50   1              delay(2000);
+  51   1      
+  52   1              if(!strcmp(buf,"Enter password:"))
+  53   1              {
+  54   2                j=0;
+  55   2                uart_string("AAA");                           //ENTER SECURITY CODE
+C51 COMPILER V8.15   SMART_CARD                                                            11/19/2014 19:57:52 PAGE 2   
+
+  56   2                uart_enter();
+  57   2      
+  58   2                while(j==0);
+  59   2                delay(1500);
+  60   2                lcd_cmd(0x01);
+  61   2            lcd_string("CARD ACCEPTED..");
+  62   2                delay(1000);
+  63   2                
+  64   2                j=0;
+  65   2                uart_string("READ 40 5");             //READING THE DATA
+  66   2                uart_enter();
+  67   2                                                
+  68   2                while(j==0);
+  69   2                delay(1500);
+  70   2                j=j-2;
+  71   2                buf[j]='\0';
+  72   2      
+  73   2                delay(500);
+  74   2                lcd_cmd(0xc0);
+  75   2                lcd_string(buf);
+  76   2                delay(2000);
+  77   2                delay(2000);
+  78   2      
+  79   2                lcd_cmd(1);
+  80   2                lcd_cmd(0x80);
+  81   2                lcd_string("REMOVE CARD");
+  82   2                delay(2000);
+  83   2                j=0;
+  84   2                while(j==0);
+  85   2                delay(1000);
+  86   2      
+  87   2                j=j-2;
+  88   2                buf[j]='\0';
+  89   2                if(!strcmp(buf,"Card Removed"))
+  90   2                  goto start;
+  91   2      
+  92   2              }
+  93   1      
+  94   1              else
+  95   1              {
+  96   2                      lcd_cmd(0x01);
+  97   2              lcd_string("Card Error");
+  98   2                      lcd_cmd(0xc0);
+  99   2              lcd_string("Re Insert Card");
+ 100   2          
+ 101   2                      j=0;
+ 102   2                      while(j==0);
+ 103   2                      delay(2000);      
+ 104   2                      goto start;
+ 105   2        
+ 106   2         }
+ 107   1      }
+ 108           
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    779    ----
+   CONSTANT SIZE    =    132    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     63      10
+   IDATA SIZE       =   ----    ----
+C51 COMPILER V8.15   SMART_CARD                                                            11/19/2014 19:57:52 PAGE 3   
+
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

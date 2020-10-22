@@ -1,0 +1,57 @@
+C51 COMPILER V8.15   MADHU                                                                 10/02/2014 20:18:01 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE MADHU
+OBJECT MODULE PLACED IN madhu.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE madhu.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          #include "ORL/delay.h"
+   3          #include "ORL/7SEG.H"
+   4          
+   5          #define enable P3
+   6          
+   7          void main()
+   8          {
+   9   1         enable=0x01;  
+  10   1         while(1)
+  11   1         {
+  12   2                       
+  13   2               led=0xC0;
+  14   2               delay(500);
+  15   2               led=0xF9;
+  16   2               delay(500);
+  17   2               led=0xA4;
+  18   2               delay(500);
+  19   2               led=0xB0;
+  20   2               delay(500);
+  21   2               led=0x99;
+  22   2               delay(500);
+  23   2               led=0x92;
+  24   2               delay(500);
+  25   2               led=0x82;
+  26   2               delay(500);
+  27   2               led=0xF8;
+  28   2               delay(500);
+  29   2               led=0x80;
+  30   2               delay(500);
+  31   2               led=0x98;
+  32   2               delay(500);
+  33   2        }      
+  34   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    187    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,64 @@
+C51 COMPILER V8.15   MAX485_RXTEST                                                         12/11/2014 12:32:58 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE MAX485_RXTEST
+OBJECT MODULE PLACED IN max485 rxtest.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE max485 rxtest.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "ORL/ORL.h"
+   2          #include "ORL/DELAY.h"
+   3          #include "ORL/MAX485.h"
+   4          
+   5          //#include "ORL/UART.h"
+   6          
+   7          //sbit dat=P2^0;
+   8          sbit led=P2^7;
+   9          
+  10          
+  11          unsigned char ch[15],j=0;
+  12          
+  13          void serial(void) interrupt     4
+  14          {
+  15   1              if(RI)
+  16   1              {
+  17   2                      ch[j]=SBUF;
+  18   2                      RI=0;
+  19   2                      j++;
+  20   2              }
+  21   1      }
+  22          
+  23          void main()
+  24          {
+  25   1              dat=1;
+  26   1              uart_init();
+  27   1      
+  28   1              EA=1;
+  29   1              ES=1;
+  30   1      
+  31   1              j=0;
+  32   1              while(j==0);
+  33   1              delay(2000);
+  34   1              ch[j]='\0';
+  35   1        
+  36   1              if(!strcmp(ch,"LS"))
+  37   1              {
+  38   2                      led=0;
+  39   2              }
+  40   1              
+  41   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    231    ----
+   CONSTANT SIZE    =      3    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     16       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,3 @@
+"uart.obj" 
+TO "uart" 
+RAMSIZE(256) 

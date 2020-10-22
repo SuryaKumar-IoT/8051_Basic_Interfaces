@@ -1,0 +1,56 @@
+C51 COMPILER V8.15   MEM                                                                   10/06/2014 17:29:17 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE MEM
+OBJECT MODULE PLACED IN mem.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE mem.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          #include <STRING.H>
+   3          #include <INTRINS.H>
+   4          
+   5          #include "ORL/delay.h"
+   6          #include "ORL/lcd.h"
+   7          #include "ORL/mems.h"
+   8          
+   9          
+  10          void main()
+  11          {
+  12   1      
+  13   1        lcd_init();
+  14   1        lcd_cmd(1);
+  15   1        lcd_cmd(0x84);
+  16   1        lcd_string("I2C TEST");
+  17   1        delay(200);
+  18   1        mems_init();
+  19   1        lcd_cmd(1);
+  20   1              
+  21   1        while(1)
+  22   1        {
+  23   2                      memsdata=mems_start();
+  24   2                      delay(10);
+  25   2                      lcd_cmd(0x80);
+  26   2                      lcd_num(memsdata);
+  27   2                      delay(100);
+  28   2                      
+  29   2                      delay(300);
+  30   2                      lcd_cmd(1);
+  31   2                      mems_stop();
+  32   2              }  
+  33   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    624    ----
+   CONSTANT SIZE    =      9    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1      11
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

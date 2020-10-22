@@ -1,0 +1,53 @@
+C51 COMPILER V8.15   LDR                                                                   10/03/2014 20:14:53 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE LDR
+OBJECT MODULE PLACED IN ldr.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ldr.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          
+   3          #include "ORL/delay.h"
+   4          #include "ORL/lcd.h"
+   5          
+   6          sbit ldr=P2^0;
+   7          sbit led=P2^7;
+   8          
+   9          void main()
+  10          {
+  11   1      
+  12   1        lcd_init();
+  13   1        lcd_cmd(0x82);
+  14   1        lcd_string("LDR TEST");
+  15   1        delay(200);
+  16   1      
+  17   1        while(1)
+  18   1        {
+  19   2          led=0;
+  20   2              lcd_cmd(1);
+  21   2              if(ldr==0)
+  22   2              {
+  23   3                 led=1;
+  24   3                 lcd_cmd(1);
+  25   3                 lcd_string("LDR DETECTED");
+  26   3                 delay(200);
+  27   3                 while(ldr==0);
+  28   3              }
+  29   2        }
+  30   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    334    ----
+   CONSTANT SIZE    =     22    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       7
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

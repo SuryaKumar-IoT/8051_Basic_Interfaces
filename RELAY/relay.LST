@@ -1,0 +1,60 @@
+C51 COMPILER V8.15   RELAY                                                                 10/03/2014 19:41:59 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE RELAY
+OBJECT MODULE PLACED IN relay.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE relay.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          
+   3          #include "ORL/delay.h"
+   4          #include "ORL/lcd.h"
+   5          
+   6          sbit relay=P2^0;
+   7          sbit sw=P2^7;
+   8          void main()
+   9          {
+  10   1        relay=0;
+  11   1        lcd_init();
+  12   1        lcd_cmd(0x82);
+  13   1        lcd_string("RELAY TEST");
+  14   1        delay(200);
+  15   1      
+  16   1        while(1)
+  17   1        {
+  18   2          if(sw==0)
+  19   2              {  
+  20   3      
+  21   3                lcd_cmd(1);
+  22   3                lcd_string("RELAY ON");
+  23   3                delay(200);
+  24   3                relay=1;
+  25   3              }
+  26   2              else
+  27   2              {
+  28   3                lcd_cmd(1);
+  29   3                lcd_string("RELAY OFF");
+  30   3                delay(200);
+  31   3                relay=0;
+  32   3              }
+  33   2        }
+  34   1      }
+  35          
+  36            
+  37            
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    349    ----
+   CONSTANT SIZE    =     30    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       7
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

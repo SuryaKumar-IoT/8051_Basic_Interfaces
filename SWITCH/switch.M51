@@ -1,0 +1,83 @@
+BL51 BANKED LINKER/LOCATER V6.15                                                        10/01/2014  12:45:04  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.15, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE switchmacro.obj TO switch RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  switchmacro.obj (SWITCHMACRO)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  switch (SWITCHMACRO)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0037H     UNIT         ?PR?MAIN?SWITCHMACRO
+            CODE    0837H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   switch (SWITCHMACRO)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?SWITCHMACRO
+
+
+
+SYMBOL TABLE OF MODULE:  switch (SWITCHMACRO)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SWITCHMACRO
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:0800H         PUBLIC        main
+  -------         PROC          MAIN
+  C:0800H         LINE#         6
+  C:0800H         LINE#         7
+  C:0800H         LINE#         8
+  C:0800H         LINE#         9
+  C:0800H         LINE#         10
+  C:0805H         LINE#         11
+BL51 BANKED LINKER/LOCATER V6.15                                                      10/01/2014  12:45:04  PAGE 2
+
+
+  C:080AH         LINE#         12
+  C:080FH         LINE#         13
+  C:0814H         LINE#         14
+  C:0819H         LINE#         15
+  C:081EH         LINE#         16
+  C:0823H         LINE#         17
+  C:0828H         LINE#         18
+  C:082DH         LINE#         19
+  C:0832H         LINE#         21
+  C:0835H         LINE#         22
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        SWITCHMACRO
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0037H BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=70
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

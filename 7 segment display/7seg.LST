@@ -1,0 +1,46 @@
+C51 COMPILER V8.15   7SEG                                                                  10/03/2014 21:28:14 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE 7SEG
+OBJECT MODULE PLACED IN 7seg.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE 7seg.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          
+   3          #include "ORL/delay.h"
+   4          #include "ORL/7seg.h"
+   5          
+   6          sbit sw=P3^0;
+   7          
+   8          void main()
+   9          {
+  10   1        unsigned int count=0;
+  11   1        //en1=en2=en3=en4=1;
+  12   1        while(1)
+  13   1        {
+  14   2           
+  15   2               if(sw==0)
+  16   2               {  
+  17   3                 //while(sw==0);
+  18   3                 count++;
+  19   3                 led_num(count);
+  20   3                 delay(200);
+  21   3               }
+  22   2        }
+  23   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    303    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       8
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

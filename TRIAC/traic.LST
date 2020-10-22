@@ -1,0 +1,47 @@
+C51 COMPILER V8.15   TRAIC                                                                 10/04/2014 11:32:09 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE TRAIC
+OBJECT MODULE PLACED IN traic.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE traic.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          
+   3          #include "ORL/delay.h"
+   4          #include "ORL/lcd.h"
+   5          
+   6          sbit moc=P2^0;
+   7          sbit sw=P2^7;
+   8          
+   9          void main()
+  10          {
+  11   1      
+  12   1        lcd_init();
+  13   1        lcd_cmd(0x83);
+  14   1        lcd_string("TRAIC AC TEST");
+  15   1        delay(200);
+  16   1      
+  17   1        while(1)
+  18   1        {
+  19   2           if(sw==0)
+  20   2               {
+  21   3                 moc=~moc;
+  22   3               }
+  23   2        }
+  24   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    303    ----
+   CONSTANT SIZE    =     14    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       7
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,111 @@
+C51 COMPILER V8.15   TSOP                                                                  08/17/2015 18:08:14 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE TSOP
+OBJECT MODULE PLACED IN tsop.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE tsop.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          
+   3          #include "ORL/delay.h"
+   4          #include "ORL/tsopir.h"
+   5          #include "ORL/lcd.h"
+   6          
+   7          sbit moc1=P2^0;
+   8          sbit moc2=P2^1;
+   9          sbit moc3=P2^2;
+  10          sbit moc4=P2^3;
+  11          sbit moc5=P2^4;
+  12          sbit moc6=P2^5;
+  13          sbit moc7=P2^6;
+  14          sbit moc8=P2^7;
+  15          
+  16          
+  17          void main()
+  18          {
+  19   1          lcd_init();
+  20   1              lcd_cmd(0x83);
+  21   1              lcd_string("IR TEST");
+  22   1              delay(200);     
+  23   1      
+  24   1              EA=1;
+  25   1              EX0=1;
+  26   1      
+  27   1              
+  28   1              while(1)
+  29   1              {
+  30   2                 
+  31   2                      if(key==1)
+  32   2                      {
+  33   3                                      moc1=~moc1;
+  34   3                                      key=0;
+  35   3                      }
+  36   2                      
+  37   2                      if(key==2)  
+  38   2                      {
+  39   3                              moc2=~moc2;
+  40   3                              key=0;  
+  41   3                      }
+  42   2                              
+  43   2                              if(key==3)
+  44   2                              {
+  45   3                                      moc3=~moc3;
+  46   3                                      key=0;
+  47   3                              }
+  48   2                              
+  49   2                              if(key==4)
+  50   2                              {
+  51   3                                      moc4=~moc4;
+  52   3                                      key=0;
+  53   3                              }
+  54   2                              
+  55   2                              if(key==5)
+C51 COMPILER V8.15   TSOP                                                                  08/17/2015 18:08:14 PAGE 2   
+
+  56   2                              {
+  57   3                                      moc5=~moc5;
+  58   3                                      key=0;
+  59   3                              }
+  60   2                              
+  61   2                              if(key==6)
+  62   2                              {
+  63   3                                      moc6=~moc6;
+  64   3                                      key=0;
+  65   3                              }
+  66   2                              
+  67   2                              if(key==7)
+  68   2                              {
+  69   3                                      moc7=~moc7;
+  70   3                                      key=0;
+  71   3                              }
+  72   2                              
+  73   2                              if(key==8)
+  74   2                              {
+  75   3                                      moc8=~moc8;
+  76   3                                      key=0;
+  77   3                              }
+  78   2                              
+  79   2                              if(key==9)
+  80   2                              {
+  81   3                                      moc1=moc2=moc3=moc4=moc5=moc6=moc7=moc8=1;
+  82   3                                      key=0;
+  83   3                              }
+  84   2              }
+  85   1      }
+  86          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    531    ----
+   CONSTANT SIZE    =      8    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3       7
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

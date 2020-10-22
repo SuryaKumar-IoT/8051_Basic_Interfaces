@@ -1,0 +1,168 @@
+C51 COMPILER V8.15   SMART_CARD_TEST                                                       11/18/2014 19:46:54 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE SMART_CARD_TEST
+OBJECT MODULE PLACED IN Smart Card Test.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Smart Card Test.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include"lcddisplay.h"
+   3          #include "uart.h"
+   4          #include<string.h>
+   5          
+   6          unsigned char i,j=0;
+   7          unsigned char buf[50],ch,tempdata[10];
+   8          unsigned int balance=0,amount=0,duration;
+   9          
+  10          void convert(unsigned int temp1_value)  
+  11          
+  12          {
+  13   1                  unsigned int value,d1,d2,d3;
+  14   1                    value=temp1_value/10;
+  15   1                    d3=temp1_value%10;
+  16   1                    d1=value/10;
+  17   1                    d2=value%10;
+  18   1                    lcddata(d1+48);
+  19   1                    lcddata(d2+48);
+  20   1                    lcddata(d3+48);
+  21   1      }
+  22          
+  23          
+  24          void serial(void) interrupt 4
+  25          {
+  26   1         
+  27   1       if(RI)
+  28   1        {
+  29   2         
+  30   2        if((SBUF !=13)&&(SBUF != 10))
+  31   2              {
+  32   3              buf[j] = SBUF;
+  33   3              ch=buf[j];
+  34   3              j++;
+  35   3          }
+  36   2      
+  37   2              RI = 0;
+  38   2              
+  39   2        }
+  40   1      
+  41   1      }
+  42          
+  43          
+  44          void main()
+  45           {
+  46   1        lcd_init();
+  47   1        delay(50);
+  48   1        UART_init(); 
+  49   1        delay(50);
+  50   1       
+  51   1        lcdcmd(0x85);
+  52   1        msgdisplay("WELCOME");
+  53   1       
+  54   1        start:
+  55   1       
+C51 COMPILER V8.15   SMART_CARD_TEST                                                       11/18/2014 19:46:54 PAGE 2   
+
+  56   1         lcdcmd(0x01);
+  57   1         msgdisplay("INSERT CARD");
+  58   1         
+  59   1         EA=1;
+  60   1         ES=1;
+  61   1         
+  62   1         j=0;
+  63   1         while(j==0);
+  64   1         delay(1000);
+  65   1         buf[j]='\0';
+  66   1              j=0;
+  67   1      
+  68   1          lcdcmd(0x01);
+  69   1         msgdisplay("Card Testing..");
+  70   1        
+  71   1               delay(2000);
+  72   1         if(!strcmp(buf,"Enter password:"))
+  73   1              {
+  74   2                j=0;
+  75   2                send_to_modem("AAA");                         //ENTER SECURITY CODE
+  76   2                ch_send_to_modem(13);
+  77   2                ch_send_to_modem(10);
+  78   2                
+  79   2                while(j==0);
+  80   2                delay(1500);
+  81   2                lcdcmd(0x01);
+  82   2            msgdisplay("CARD ACCEPTED..");
+  83   2                delay(1000);
+  84   2                
+  85   2                j=0;
+  86   2                send_to_modem("READ 50 1");           //READING THE DATA
+  87   2                ch_send_to_modem(13);
+  88   2                ch_send_to_modem(10); 
+  89   2                
+  90   2                j=0;
+  91   2                while(j==0);
+  92   2                delay(1500);
+  93   2                buf[j]='\0';
+  94   2      
+  95   2                if(ch == 'A')
+  96   2                {
+  97   3                 lcdcmd(1);
+  98   3                 msgdisplay("CARD A");
+  99   3             delay(1000);
+ 100   3                }
+ 101   2      
+ 102   2                else if(ch == 'B')
+ 103   2                {
+ 104   3                 lcdcmd(1);
+ 105   3                 msgdisplay("CARD B");
+ 106   3             delay(1000);
+ 107   3                }
+ 108   2      
+ 109   2                else
+ 110   2                {
+ 111   3                 lcdcmd(1);
+ 112   3                 msgdisplay("UNAUTHORIZED");
+ 113   3             delay(1000);
+ 114   3                }
+ 115   2                lcdcmd(0xc0);
+ 116   2            msgdisplay("Remove Your Card");
+ 117   2               
+C51 COMPILER V8.15   SMART_CARD_TEST                                                       11/18/2014 19:46:54 PAGE 3   
+
+ 118   2                         j=0;
+ 119   2                         while(j==0);
+ 120   2                         delay(1000);
+ 121   2                         j=0;
+ 122   2      
+ 123   2                         goto start;
+ 124   2                       
+ 125   2                       } 
+ 126   1                        
+ 127   1        else
+ 128   1         {
+ 129   2              lcdcmd(0x01);
+ 130   2          msgdisplay("Card Error");
+ 131   2              lcdcmd(0xc0);
+ 132   2          msgdisplay("Re Insert Card");
+ 133   2          
+ 134   2              j=0;
+ 135   2              while(j==0);
+ 136   2              delay(2000);      
+ 137   2               goto start;
+ 138   2        
+ 139   2         }
+ 140   1       }       
+ 141          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    761    ----
+   CONSTANT SIZE    =    151    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     69      15
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

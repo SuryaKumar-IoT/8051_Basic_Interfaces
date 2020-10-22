@@ -1,0 +1,3 @@
+"ldr.obj" 
+TO "ldr" 
+RAMSIZE(256) 

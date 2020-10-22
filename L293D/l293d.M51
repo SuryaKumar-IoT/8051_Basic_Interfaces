@@ -1,0 +1,81 @@
+BL51 BANKED LINKER/LOCATER V6.15                                                        10/01/2014  16:01:11  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.15, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE l293dmacro.obj TO l293d RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  l293dmacro.obj (L293DMACRO)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  l293d (L293DMACRO)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     002DH     UNIT         ?PR?MAIN?L293DMACRO
+            CODE    082DH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   l293d (L293DMACRO)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?L293DMACRO
+
+
+
+SYMBOL TABLE OF MODULE:  l293d (L293DMACRO)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        L293DMACRO
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:0800H         PUBLIC        main
+  -------         PROC          MAIN
+  C:0800H         LINE#         7
+  C:0800H         LINE#         8
+  C:0800H         LINE#         9
+  C:0800H         LINE#         10
+  C:0800H         LINE#         11
+  C:0805H         LINE#         12
+BL51 BANKED LINKER/LOCATER V6.15                                                      10/01/2014  16:01:11  PAGE 2
+
+
+  C:080AH         LINE#         13
+  C:080FH         LINE#         14
+  C:0814H         LINE#         15
+  C:0819H         LINE#         16
+  C:081EH         LINE#         17
+  C:0823H         LINE#         18
+  C:0828H         LINE#         20
+  C:082BH         LINE#         21
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        L293DMACRO
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 002DH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=60
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,45 @@
+C51 COMPILER V8.15   L293DMACRO                                                            10/01/2014 15:37:12 PAGE 1   
+
+
+C51 COMPILER V8.15, COMPILATION OF MODULE L293DMACRO
+OBJECT MODULE PLACED IN l293dmacro.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE l293dmacro.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          
+   3          #define l293d P2
+   4          
+   5          #define sw P1
+   6          
+   7          void main()
+   8          {
+   9   1        while(1)
+  10   1        {
+  11   2          if(sw==0xFE)
+  12   2                l293d=0xD7;
+  13   2              else if(sw==0xFD)
+  14   2                l293d=0xEB;
+  15   2              else if(sw==0xFB)
+  16   2                l293d=0xF5;
+  17   2              else if(sw==0xF7)
+  18   2                l293d=0xD2;
+  19   2              else
+  20   2                l293d=0xFF;
+  21   2        }
+  22   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     45    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

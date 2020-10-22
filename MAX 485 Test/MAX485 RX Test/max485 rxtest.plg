@@ -1,0 +1,71 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\surya\Personal\project codes\8051 Development Board\MAX 485 Test\MAX485 RX Test\max485 rxtest.uvproj
+Project File Date:  12/09/2014
+
+<h2>Output:</h2>
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_RX?MAX485_RXTEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_STRING?MAX485_RXTEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_ENTER?MAX485_RXTEST
+Program Size: data=28.0 xdata=0 code=834
+creating hex file from "max485 rxtest"...
+"max485 rxtest" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling max485 rxtest.c...
+ORL/MAX485.H(29): error C141: syntax error near 'unsigned'
+ORL/MAX485.H(29): error C202: 'c': undefined identifier
+ORL/MAX485.H(31): error C202: 'c': undefined identifier
+ORL/MAX485.H(33): error C202: 'c': undefined identifier
+ORL/MAX485.H(40): error C141: syntax error near 'unsigned'
+ORL/MAX485.H(40): error C202: 'j': undefined identifier
+ORL/MAX485.H(42): error C202: 'j': undefined identifier
+ORL/MAX485.H(43): error C202: 'j': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling max485 rxtest.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_RX?MAX485_RXTEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_STRING?MAX485_RXTEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_ENTER?MAX485_RXTEST
+Program Size: data=28.0 xdata=0 code=840
+creating hex file from "max485 rxtest"...
+"max485 rxtest" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling max485 rxtest.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_RX?MAX485_RXTEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_STRING?MAX485_RXTEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_ENTER?MAX485_RXTEST
+Program Size: data=28.0 xdata=0 code=840
+creating hex file from "max485 rxtest"...
+"max485 rxtest" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling max485 rxtest.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_RX?MAX485_RXTEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UART_STRING?MAX485_RXTEST
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UART_ENTER?MAX485_RXTEST
+Program Size: data=28.0 xdata=0 code=840
+creating hex file from "max485 rxtest"...
+"max485 rxtest" - 0 Error(s), 3 Warning(s).

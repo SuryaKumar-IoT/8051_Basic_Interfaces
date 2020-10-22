@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"MAX485 test.obj" 
+TO "MAX485 test" 
+RAMSIZE(256) 
